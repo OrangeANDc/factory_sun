@@ -1,0 +1,174 @@
+﻿<Window x:Class="SunwaysFactoryProgram.Views.BurnInViews.BurnInDataView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SunwaysFactoryProgram.Views.BurnInViews"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="老化数据查询" Height="800" Width="1220" ResizeMode="NoResize">
+    <materialDesign:DialogHost DialogTheme="Inherit"  Identifier="Root">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.1*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="查询条件" Padding="2" BorderThickness="2" Style="{StaticResource NGroupBox}" Margin="2">
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <TextBlock Text="序列号:" VerticalAlignment="Center" FontSize="18" Margin="10,0,0,0"/>
+                <TextBox Text="{Binding InverterNum}" Width="200" VerticalAlignment="Center" FontSize="18" Margin="20,0,0,0"/>
+
+                    <StackPanel Margin="20,0,0,0"
+  Orientation="Horizontal">
+                        <TextBlock
+    VerticalAlignment="Center"
+    FontSize="18"
+    Text="{Binding StartDate, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" />
+                        <Button
+    Margin="10,0,0,0" FontSize="18"
+    materialDesign:DialogHost.DialogClosingAttached="CombinedDialogClosingEventHandler"
+    materialDesign:DialogHost.DialogOpenedAttached="CombinedDialogOpenedEventHandler"
+    Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Style="{StaticResource MaterialDesignFlatLightBgButton}"
+    Content="开始时间">
+                            <Button.CommandParameter>
+                                <Grid
+        Margin="-1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition
+            Height="*" />
+                                        <RowDefinition
+            Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <StackPanel
+          Grid.Row="0"
+          Orientation="Horizontal">
+                                        <Calendar
+            x:Name="CombinedCalendar"
+            Margin="-1,-4,-1,0" />
+                                        <materialDesign:Clock
+            x:Name="CombinedClock"
+            DisplayAutomation="CycleWithSeconds"
+            Is24Hours="True" />
+                                    </StackPanel>
+                                    <StackPanel
+          Grid.Row="1"
+          Margin="8"
+          HorizontalAlignment="Right"
+          Orientation="Horizontal">
+                                        <Button
+            Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+            CommandParameter="0"
+            Content="CANCEL"
+            Style="{StaticResource MaterialDesignFlatButton}" />
+                                        <Button
+            Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+            CommandParameter="1"
+            Content="OK"
+            Style="{StaticResource MaterialDesignFlatButton}" />
+                                    </StackPanel>
+                                </Grid>
+                            </Button.CommandParameter>
+                        </Button>
+                    </StackPanel>
+                
+                
+                   
+                    <TextBlock Text="~" VerticalAlignment="Center" FontSize="18" Margin="20,0,0,0"/>
+
+                    <StackPanel Margin="20,0,0,0"
+  Orientation="Horizontal">
+                        <TextBlock
+    VerticalAlignment="Center"
+    FontSize="18"
+    Text="{Binding EndDate, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" />
+                        <Button
+    Margin="10,0,0,0" FontSize="18"
+    materialDesign:DialogHost.DialogClosingAttached="CombinedDialogClosingEventHandler2"
+    materialDesign:DialogHost.DialogOpenedAttached="CombinedDialogOpenedEventHandler2"
+    Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Style="{StaticResource MaterialDesignFlatLightBgButton}"
+    Content="结束时间">
+                            <Button.CommandParameter>
+                                <Grid
+        Margin="-1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition
+            Height="*" />
+                                        <RowDefinition
+            Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <StackPanel
+          Grid.Row="0"
+          Orientation="Horizontal">
+                                        <Calendar
+            x:Name="CombinedCalendar2"
+            Margin="-1,-4,-1,0" />
+                                        <materialDesign:Clock
+            x:Name="CombinedClock2"
+            DisplayAutomation="CycleWithSeconds"
+            Is24Hours="True" />
+                                    </StackPanel>
+                                    <StackPanel
+          Grid.Row="1"
+          Margin="8"
+          HorizontalAlignment="Right"
+          Orientation="Horizontal">
+                                        <Button
+            Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+            CommandParameter="0"
+            Content="CANCEL"
+            Style="{StaticResource MaterialDesignFlatButton}" />
+                                        <Button
+            Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+            CommandParameter="1"
+            Content="OK"
+            Style="{StaticResource MaterialDesignFlatButton}" />
+                                    </StackPanel>
+                                </Grid>
+                            </Button.CommandParameter>
+                        </Button>
+                    </StackPanel>
+
+
+                 
+                    <Button Content="查询" Command="{Binding QueryCommand}" CommandParameter="{Binding ElementName=tbcData, Path=SelectedIndex}" FontSize="18" Margin="50,0,0,0"
+                                Style="{StaticResource MaterialDesignFlatLightBgButton}" />
+                    <Button Content="导出" Command="{Binding ExportCommand}" CommandParameter="{Binding ElementName=tbcData, Path=SelectedIndex}" FontSize="18" Margin="30,0,0,0" 
+                                Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="查询数据" Grid.Row="1" Padding="2" BorderThickness="2" Style="{StaticResource NGroupBox}" Margin="2">
+                <TabControl  x:Name="tbcData" HorizontalContentAlignment="Left" TabStripPlacement="Top" SelectedIndex="0" Margin="5" Style="{StaticResource MaterialDesignTabControl}">
+                    <TabItem Header="老化结果" Width="150" >
+                        <Grid >
+                            <DataGrid ItemsSource="{Binding ResultList}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                      CanUserSortColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="InverterSN" Binding="{Binding InverterSN}" />
+                                    <DataGridTextColumn Header="Pv时间" Binding="{Binding PvTime}" />
+                                    <DataGridTextColumn Header="Bat时间" Binding="{Binding BatTime}" />
+                                    <DataGridTextColumn Header="Pv结果" Binding="{Binding PvResult}" />
+                                    <DataGridTextColumn Header="Bat结果" Binding="{Binding BatResult}" />
+                                    <DataGridTextColumn Header="测试时间" Binding="{Binding Path=TestTime,StringFormat='yyyy/MM/dd hh:mm'}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="异常结果" Width="150" >
+                        <Grid>
+                            <DataGrid ItemsSource="{Binding ErrList}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                      CanUserSortColumns="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="InverterSN" Binding="{Binding InverterSN}" />
+                                    <DataGridTextColumn Header="错误信息" Binding="{Binding ErrorMsg}" />
+                                    <DataGridTextColumn Header="错误等级" Binding="{Binding ErrorLevel}" />
+                                    <DataGridTextColumn Header="创建时间" Binding="{Binding Path=CreationDate,StringFormat='yyyy/MM/dd hh:mm'}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </GroupBox>
+        </Grid>
+    </materialDesign:DialogHost>
+</Window>

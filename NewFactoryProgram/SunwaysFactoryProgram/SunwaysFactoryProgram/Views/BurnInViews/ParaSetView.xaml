@@ -1,0 +1,22 @@
+﻿<Window x:Class="SunwaysFactoryProgram.Views.BurnInViews.ParaSetView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SunwaysFactoryProgram.Views.BurnInViews"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ParaSetView" Height="200" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="tbPVTime"  VerticalAlignment="Center" HorizontalAlignment="Center" Block.TextAlignment="Center"
+                        materialDesign:HintAssist.Hint="PV老化时间 (H)" FontSize="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <TextBox x:Name="tbBatteryTime"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Block.TextAlignment="Center"
+                        materialDesign:HintAssist.Hint="电池老化时间 (H)" FontSize="15" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        <Button Content="保存" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+    </Grid>
+</Window>

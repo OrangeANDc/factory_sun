@@ -1,0 +1,76 @@
+﻿<Window x:Class="SunwaysFactoryProgram.Views.BurnInView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SunwaysFactoryProgram.Views"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Sunways" Height="800" Width="1250" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone Padding="10" Mode="PrimaryLight"  materialDesign:ElevationAssist.Elevation ="Dp4">
+            <Grid>
+                <TextBlock x:Name="tbProduce" Margin="50,0,0,0"  HorizontalAlignment="Left" FontSize="20" VerticalAlignment="Center" />
+            </Grid>
+        </materialDesign:ColorZone>
+        <Grid Grid.Row="1" Margin="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="6*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="功能选择" BorderThickness="2" Style="{StaticResource NGroupBox}" FontSize="13">
+                <StackPanel Orientation="Vertical">
+
+                    <Button Content="设备绑定" HorizontalAlignment="Center" FontSize="18" Margin="15" 
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="DeviceBind_Click"/>
+                    <Button Content="参数设置" HorizontalAlignment="Center" FontSize="18" Margin="15" 
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="ParaSet_Click"/>
+                    <Button Content="数据查询" HorizontalAlignment="Center" FontSize="18" Margin="15" 
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="Button_Click"/>
+                    <Button Content="数据导出" HorizontalAlignment="Center" FontSize="18" Margin="15" 
+                            Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="Export_Click"/>
+                </StackPanel>
+            </GroupBox>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer>
+                    <WrapPanel x:Name="wpView" Orientation="Horizontal" Margin="0,2,0,0" />
+                </ScrollViewer>
+                
+                <DataGrid x:Name="dgInf" Grid.Row="1" HeadersVisibility="None"  Margin="4,0,4,1" BorderThickness="2" AutoGenerateColumns="False" 
+                      CanUserResizeColumns="False" CanUserResizeRows="False" FontSize="10" IsReadOnly="True"
+                          GridLinesVisibility="None" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="时间" Binding="{Binding Path=Time,StringFormat='yyyy/MM/dd HH:mm:ss'}"/>
+                        <DataGridTextColumn Header="信息" Binding="{Binding Inf}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+            </Grid>
+            
+        </Grid>
+
+
+        <materialDesign:ColorZone Padding="8" Mode="PrimaryLight" Grid.Row="2" materialDesign:ElevationAssist.Elevation ="Dp4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="tbUser"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13"/>
+                <TextBlock x:Name="tbStationName" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13"/>
+                <TextBlock x:Name="tbVersion" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="13"/>
+            </Grid>
+        </materialDesign:ColorZone>
+    </Grid>
+</Window>

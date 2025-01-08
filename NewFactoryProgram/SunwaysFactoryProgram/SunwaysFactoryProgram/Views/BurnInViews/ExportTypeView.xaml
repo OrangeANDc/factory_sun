@@ -1,0 +1,33 @@
+﻿<Window x:Class="SunwaysFactoryProgram.Views.BurnInViews.ExportTypeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SunwaysFactoryProgram.Views.BurnInViews"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="导出类型选择" Height="300" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="清选择需要导出的序列号类型" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox x:Name="cbAll" Grid.Row="1" Content="全部" FontSize="16" Margin="30,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignCheckBox }" Checked="cbAll_Checked" Unchecked="cbAll_Unchecked"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <CheckBox x:Name="cbPass" Content="PASS" FontSize="16" Margin="30,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignCheckBox }"/>
+            <CheckBox x:Name="cbNormal" Content="正常" FontSize="16" Margin="30,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignCheckBox }"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <CheckBox x:Name="cbFail" Content="FAIL" FontSize="16" Margin="30,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignCheckBox }"/>
+            <CheckBox x:Name="cbAbnormal" Content="异常" FontSize="16" Margin="30,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignCheckBox }"/>
+            <CheckBox x:Name="cbOffline" Content="离线" FontSize="16" Margin="30,0,0,0" VerticalAlignment="Center" Style="{StaticResource MaterialDesignCheckBox }"/>
+        </StackPanel>
+
+        <Button Content="确定" Grid.Row="4" Width="100" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+    </Grid>
+</Window>

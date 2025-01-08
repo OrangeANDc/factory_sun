@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\BurnInView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BurnInViews\BurnInDataView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BurnInViews\BurnModelView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BurnInViews\DeviceBindView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BurnInViews\ExportTypeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BurnInViews\ParaSetView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DataViews\PackTestDataView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\FunctionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\FuncViews\NoticeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\FuncViews\OdmSNView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PackView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WareHouseView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\BurnInView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\BurnInViews\BurnInDataView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\BurnInViews\BurnModelView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\BurnInViews\DeviceBindView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\BurnInViews\ExportTypeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\BurnInViews\ParaSetView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DataViews\PackTestDataView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FunctionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FuncViews\CheckCodeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FuncViews\NoticeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FuncViews\OdmSNView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Low_PackView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PackView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WareHouseView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

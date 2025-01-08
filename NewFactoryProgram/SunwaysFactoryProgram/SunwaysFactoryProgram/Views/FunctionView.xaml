@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="SunwaysFactoryProgram.Views.FunctionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SunwaysFactoryProgram.Views"
+             xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600" Background="White">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+       
+        <GroupBox x:Name="gbTestSet" Header="测试设置" Style="{StaticResource NGroupBox}" Margin="2" BorderThickness="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <CheckBox x:Name="cbVolCorrect"  HorizontalAlignment="Left" FontSize="15" Margin="30,0,0,0"
+                            Content="1.65V电压校正(三相并网机种)"  VerticalAlignment="Center"/>
+                <CheckBox x:Name="cbExportLimit"  HorizontalAlignment="Left" FontSize="15" Grid.Row="1" Margin="30,0,0,0"
+                            Content="防逆流测试"   VerticalAlignment="Center"/>
+                <CheckBox x:Name="cbDred"  HorizontalAlignment="Left" FontSize="15" Grid.Row="2" Margin="30,0,0,0"
+                            Content="DRED测试"   VerticalAlignment="Center"/>
+
+                <TextBox  x:Name="tbExportLimit" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Margin="30,-20,0,0"
+                    materialDesign:HintAssist.Hint="上行功率百分比: %"  materialDesign:HintAssist.HelperText="防逆流参数"
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="16"
+                          IsEnabled="{Binding ElementName=cbExportLimit, Path=IsChecked}"/>
+                       
+            </Grid>
+
+
+        </GroupBox>
+
+        <GroupBox x:Name="gbParaSet" Header="参数设置" Style="{StaticResource NGroupBox}" Grid.Row="1" Margin="2" BorderThickness="2">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="cbSwitch"  Width="100" materialDesign:HintAssist.Hint="防逆流开关"                            
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontSize="16"
+                               VerticalAlignment="Center"  Margin="50,-15,0,0">
+                    <ComboBoxItem Content="ON"/>
+                    <ComboBoxItem Content="OFF"/>
+                </ComboBox>
+                <Button x:Name="btnSetSwitch" Content="设置" Margin="20,0,0,0" Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnSetSwitch_Click"/>
+                <Button x:Name="btnReadCT" Content="读CT变比" Margin="50,0,0,0" Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnReadCT_Click"/>
+                
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox x:Name="gbLowDeviceParaSet" Header="低压储能参数设置" Style="{StaticResource NGroupBox}" Grid.Row="2" Margin="2" BorderThickness="2">
+            <Grid Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <ComboBox x:Name="cbWorkMode" Width="115" materialDesign:HintAssist.Hint="工作模式设置" SelectionChanged="cbWorkMode_WorkModeSelectionChanged"                           
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontSize="16"
+                               VerticalAlignment="Center"  Margin="20,-15,0,0" >
+                        <ComboBoxItem Content="Genral"/>
+                        <ComboBoxItem Content="ECO"/>
+                        <ComboBoxItem Content="UPS"/>
+                        <ComboBoxItem Content="OffGrid"/>
+                        <ComboBoxItem Content="Force"/>
+                        <ComboBoxItem Content="GEN"/>
+                    </ComboBox>
+
+                    <ComboBox x:Name="cbChildMode" materialDesign:HintAssist.Hint="子模式" Visibility="Collapsed" Width="120"                        
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontSize="16"
+                               VerticalAlignment="Center" Margin="20,-15,0,0" >
+                    </ComboBox>
+
+                    <Button x:Name="btnSetWorkMode" Content="设置工作模式" Margin="20,0,0,0" Click="btnSetWorkMode_Click"
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}"/>
+                </StackPanel>
+
+                <Button x:Name="btnResetStatus" Content="清零发电量" Grid.Column="1"  Margin="100,0,0,0" HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnResetStatus_Click"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <ComboBox x:Name="cbSafety" Width="120" materialDesign:HintAssist.Hint="安规"                           
+                               Style="{StaticResource MaterialDesignFloatingHintComboBox}"  FontSize="16"
+                              HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="20,-15,0,0"/>
+                    <Button x:Name="btnSetSafety" Content="设置安规"  Margin="30,0,0,0" HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnSetSafety_Click"/>
+                
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                    <ComboBox x:Name="cbBurnMode" Width="80" materialDesign:HintAssist.Hint="老化模式"                           
+                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontSize="16"
+                              VerticalAlignment="Center"  Margin="20,-15,0,0">
+                        <ComboBoxItem Content="关闭"/>
+                        <ComboBoxItem Content="开启"/>
+                    </ComboBox>
+                    <Button x:Name="btnSetBurnMode" Content="设置老化模式"  Margin="30,0,0,0" HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnSetBurnMode_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+                    <ComboBox x:Name="cbBatteryId" Width="120" materialDesign:HintAssist.Hint="Battery ID"                           
+                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontSize="16"
+                              VerticalAlignment="Center"  Margin="20,-15,0,0">
+                        <ComboBoxItem Content="STE-LS"/>
+                        <ComboBoxItem Content="PHY-LV"/>
+                        <ComboBoxItem Content="CYG-LV"/>
+                        <ComboBoxItem Content="SANB-LV"/>
+                        <ComboBoxItem Content="SNX-LV"/>
+                        <ComboBoxItem Content="HBDK-LV"/>
+                        <ComboBoxItem Content="Pylon-LV"/>
+                    </ComboBox>
+                    <Button x:Name="btnSetBatteryId" Content="设置"  Margin="30,0,0,0" HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnSetBatteryId_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+                    <ComboBox x:Name="cbBatteryType" Width="120" materialDesign:HintAssist.Hint="Battery Type"                           
+                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontSize="16"
+                              VerticalAlignment="Center"  Margin="20,-15,0,0">
+                        <ComboBoxItem Content="Lith"/>
+                        <ComboBoxItem Content="Lead"/>
+                    </ComboBox>
+                    <Button x:Name="btnSetBatteryType" Content="设置"  Margin="30,0,0,0" HorizontalAlignment="Center"
+                        Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnSetBatteryType_Click"/>
+                </StackPanel>
+                <Button x:Name="btnRTC" Grid.Row="3" Content="同步时间" HorizontalAlignment="Left" Margin="30,0,0,0"  Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnRTC_Click"/>
+            </Grid>
+           
+                
+
+        </GroupBox>
+    </Grid>
+</UserControl>

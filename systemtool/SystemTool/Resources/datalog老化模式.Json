@@ -1,0 +1,11 @@
+﻿[
+  {
+    "DataName": "datalog老化模式",
+    "Remark": "0默认,1老化(无法读取)",
+    "DataAddress": 63000,
+    "DataLength": 1,
+    "IsSigned": false,
+    "DataUnit": "",
+    "DataGain": 1
+  }
+]

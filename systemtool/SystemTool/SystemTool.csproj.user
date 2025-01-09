@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\BaseControl\AdvanceSettingView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\BaseControl\BaseControlView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DataMonitor\BaseDataView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DataMonitor\DataMonitorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DataMonitor\ValueSetView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\FlashView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ParaControlView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\BaseControl\AdvanceSettingView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\BaseControl\BaseControlView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DataMonitor\BaseDataView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DataMonitor\DataMonitorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DataMonitor\ValueSetView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FlashView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HeadCombineView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ParaControlView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

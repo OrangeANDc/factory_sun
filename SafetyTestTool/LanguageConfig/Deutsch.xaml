@@ -1,0 +1,37 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system ="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="gb1">Einrichten</system:String>
+    <system:String x:Key="gb1_1">Serial Port:</system:String>
+    <system:String x:Key="gb1_2">Öffnen</system:String>
+    <system:String x:Key="gb1_3">Schließen</system:String>
+    <system:String x:Key="gb1_4">Aktualisieren mit listen</system:String>
+    <system:String x:Key="gb1_5">Read System Info</system:String>
+    <system:String x:Key="gb1_6">Read Data</system:String>
+    <system:String x:Key="gb1_7">Reset Safety</system:String>
+    <system:String x:Key="gb1_8">Export</system:String>
+    <system:String x:Key="gb1_9">Sprache:</system:String>
+
+    <system:String x:Key="gb2">Systeminformationen</system:String>
+    <system:String x:Key="gb2_1">Gerätename</system:String>
+    <system:String x:Key="gb2_2">Seriennummer</system:String>
+    <system:String x:Key="gb2_3">Software-Version</system:String>
+    <system:String x:Key="gb2_4">Hardware-Version</system:String>
+    <system:String x:Key="gb2_5">Nennleistung</system:String>
+    <system:String x:Key="gb2_6">Ländereinstellung</system:String>
+    <system:String x:Key="gb2_7">Netzstandard</system:String>
+    <system:String x:Key="gb2_8">Version</system:String>
+    <system:String x:Key="gb2_9">Internal Version</system:String>
+    <system:String x:Key="gb2_10">Datum und Zeit</system:String>
+    <system:String x:Key="gb2_11">System control</system:String>
+
+    <system:String x:Key="b1">lesen</system:String>
+    <system:String x:Key="b2">Einrichten Liste</system:String>
+
+    <system:String x:Key="dg1">Datenelement</system:String>
+    <system:String x:Key="dg2">Numerischer Wert</system:String>
+    <system:String x:Key="dg3">Einheit</system:String>
+    <system:String x:Key="dg4">Information</system:String>
+
+</ResourceDictionary>

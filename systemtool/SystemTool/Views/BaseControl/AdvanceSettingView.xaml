@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="SystemTool.Views.BaseControl.AdvanceSettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SystemTool.Views.BaseControl"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="基础设置" Style="{StaticResource NGroupBox}" BorderThickness="2" FontSize="15" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                    <TextBox x:Name="tbSn" Width="160" Margin="15,-10,0,0"
+                        materialDesign:HintAssist.Hint="SN"   FontSize="14"  VerticalAlignment="Center" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                    </TextBox>
+                    <Button Content="读取" Margin="20,0,0,0" Click="BtnSnRead_Click"/>
+                    <Button Content="设置" Margin="20,0,0,0" Click="BtnSnSet_Click"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                    <ComboBox x:Name="cbSafety"  Width="160" Margin="15,-10,0,0"
+                              materialDesign:HintAssist.Hint="安规" FontSize="14"  Style="{StaticResource MaterialDesignFloatingHintComboBox }">
+                    </ComboBox>
+                    <Button Content="读取" Margin="20,0,0,0" Click="BtnSafetyRead_Click"/>
+                    <Button Content="设置" Margin="20,0,0,0" Click="BtnSafetySet_Click"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+                    <ComboBox x:Name="cbLanguage"  Width="160" Margin="15,-10,0,0"
+                        materialDesign:HintAssist.Hint="语言" FontSize="14"  Style="{StaticResource MaterialDesignFloatingHintComboBox }">
+                    </ComboBox>
+                    <Button Content="读取" Margin="20,0,0,0" Click="BtnLanguageRead_Click"/>
+                    <Button Content="设置" Margin="20,0,0,0" Click="BtnLanguageSet_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
+                    <ComboBox x:Name="cbExportLimit"  Width="160" Margin="15,-10,0,0"
+                        materialDesign:HintAssist.Hint="防逆流" FontSize="14"  Style="{StaticResource MaterialDesignFloatingHintComboBox }">
+                        <ComboBoxItem>OFF</ComboBoxItem>
+                        <ComboBoxItem>ON</ComboBoxItem>
+                    </ComboBox>
+                    <Button Content="读取" Margin="20,0,0,0" Click="BtnExportLimitRead_Click"/>
+                    <Button Content="设置" Margin="20,0,0,0" Click="BtnExportLimitSet_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Horizontal">
+                    <ComboBox x:Name="cbReactiveMode"  Width="160" Margin="15,-10,0,0"
+        materialDesign:HintAssist.Hint="无功调度模式" FontSize="14"  Style="{StaticResource MaterialDesignFloatingHintComboBox }">
+                        <ComboBoxItem  Content="直接无功调度"/>
+                        <ComboBoxItem  Content="功率因数调度"/>
+                        <ComboBoxItem  Content="Qu 曲线"/>
+                        <ComboBoxItem  Content="Pf 曲线"/>
+                    </ComboBox>
+                    <Button Content="读取" Margin="20,0,0,0" Click="BtnReactiveAdjustRead_Click"/>
+                    <Button Content="设置" Margin="20,0,0,0" Click="BtnReactiveAdjustSet_Click"/>
+                </StackPanel>
+
+               
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="日志" Grid.Row="1" Style="{StaticResource NGroupBox}" BorderThickness="2" FontSize="15" >
+            <DataGrid x:Name="gd1"  CanUserAddRows="False"  GridLinesVisibility="None" BorderThickness="0" IsReadOnly="true">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="31"/>
+                        <Setter Property="FontSize" Value="10"/>
+                    </Style>
+                </DataGrid.RowStyle>
+            </DataGrid>
+        </GroupBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="SystemTool.Views.DataMonitorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SystemTool.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <GroupBox Header="数据监控" Style="{StaticResource NGroupBox}" BorderThickness="2" FontSize="15" >
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <StackPanel  Grid.Row="0" Orientation="Horizontal">
+                    <Button x:Name="btnImport" Content="导入配置" Margin="40,0,0,0" HorizontalAlignment="Left" Click="ImportConfig_Click"/>
+                    <Button x:Name="btnStartM" Content="开始监测" Margin="40,0,0,0" HorizontalAlignment="Left" Click="StartMonitor_Click"/>
+                    <Button x:Name="btnStopM" Content="停止监测" Margin="40,0,0,0" HorizontalAlignment="Left" Click="StopMonitor_Click"/>
+                </StackPanel>
+
+                <WrapPanel x:Name="wpView" Orientation="Horizontal" Margin="0,2,0,0" Grid.Row="1" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

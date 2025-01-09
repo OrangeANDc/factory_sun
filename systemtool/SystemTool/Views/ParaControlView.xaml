@@ -1,0 +1,189 @@
+﻿<UserControl x:Class="SystemTool.Views.ParaControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SystemTool.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:prism ="http://prismlibrary.com/"
+             xmlns:data ="clr-namespace:SystemTool.Converter"
+             xmlns:vm ="clr-namespace:SystemTool.ViewModels"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+    <UserControl.Resources>
+        <data:SwitchValueConvert x:Key="switchValueConvert"/>
+        <data:VisibilityConvert x:Key="visibilityConvert"/>
+    </UserControl.Resources>
+    <GroupBox Header="数据调试" BorderThickness="2"  Style="{StaticResource  NGroupBox}" FontSize="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="添加配置表" Margin="40,0,0,0" Command="{Binding AddConfigCommand}"/>
+                <Button Content="添加数据" Margin="40,0,0,0" Command="{Binding AddCommand}"/>
+                <Button Content="删除数据" Margin="40,0,0,0" Command="{Binding DeleteCommand}"/>
+                <Button Content="导入" Margin="30,0,0,0" Command="{Binding ImportCommand}"/>
+                <Button Content="导出" Margin="40,0,0,0" Command="{Binding ExportCommand}"/>
+                <Button Content="读取当前全部" Margin="40,0,0,0" Command="{Binding ReadAllCommand}" />
+
+
+                <ToggleButton x:Name="tgConfig" Margin="40,0,0,0" IsChecked="False" VerticalAlignment="Center"  />
+                <TextBlock Text="显示配置" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                <Button Content="导出安规列表" Margin="40,0,0,0" Command="{Binding ExportSafetyCommand}"/>
+            </StackPanel>
+            <materialDesign:Card Grid.Row="1" Margin="3">
+                <TabControl x:Name="tbcView"  HorizontalContentAlignment="Left" ItemsSource="{Binding CustomTabs}" SelectedItem="{Binding SelectedTab}">
+                    <TabControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type vm:CustomTab}" >
+                            <StackPanel  Orientation="Horizontal" >
+                                <TextBlock Text="{Binding CustomHeader}"  x:Name="tbHeader" VerticalAlignment="Center"/>
+                                <Button  Command="{Binding CloseCommand}" VerticalAlignment="Center"  CommandParameter="{Binding ElementName=tbHeader, Path=Text}"
+                                          Margin="20,0,-10,0">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <materialDesign:PackIcon  Background="Transparent" Foreground="Red" Kind="Close" />
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                        
+                    </TabControl.ItemTemplate>
+                    
+                    <TabControl.ContentTemplate>
+                        <DataTemplate DataType="CustomTab">
+                            <DataGrid x:Name="dgInf" Margin="2" ItemsSource="{Binding CustomContent}"   CanUserAddRows="False" CanUserDeleteRows="False" HeadersVisibility="All"
+                      CanUserSortColumns="False" AutoGenerateColumns="False" LoadingRow="dgInf_LoadingRow" SelectedIndex="{Binding SelectIndex}" >
+                                
+                                
+                                <DataGrid.Columns>
+                                    <DataGridTemplateColumn Header="数据描述">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBox Text="{Binding DataName, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="备注" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBox Text="{Binding Remark, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="寄存器地址" Width="100" Visibility="{Binding Source={x:Reference tgConfig}, Path=IsChecked,Converter={StaticResource visibilityConvert}}" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBox Text="{Binding DataAddress, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="字节" Width="60" Visibility="{Binding Source={x:Reference tgConfig}, Path=IsChecked,Converter={StaticResource visibilityConvert}}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBox Text="{Binding DataLength, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="数据符号"  Width="100" Visibility="{Binding Source={x:Reference tgConfig}, Path=IsChecked,Converter={StaticResource visibilityConvert}}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <ComboBox SelectedIndex="{Binding IsSigned, Converter={StaticResource switchValueConvert}, UpdateSourceTrigger=PropertyChanged}" >
+                                                        <ComboBoxItem>无符号</ComboBoxItem>
+                                                        <ComboBoxItem>有符号</ComboBoxItem>
+                                                    </ComboBox>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="增益" Visibility="{Binding Source={x:Reference tgConfig}, Path=IsChecked,Converter={StaticResource visibilityConvert}}">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBox Text="{Binding DataGain, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="数值" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBox Text="{Binding DataValue, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="单位" Width="60">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBox Text="{Binding DataUnit, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn Header="操作信息" >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <TextBox Text="{Binding CommandInf, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    
+                                    <DataGridTemplateColumn >
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="-10">
+                                                    <Button  Height="25" Width="80" Content="读取" 
+                                                            Style="{StaticResource NButton}" Click="ButtonRead_Click" FontSize="12"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTemplateColumn>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="-10">
+                                                    <Button Height="25"  Style="{StaticResource NButton}" Content="设置"
+                                                            Width="80" Click="ButtonWrite_Click" FontSize="12" />
+
+                                                </Grid>
+
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                  
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DataTemplate>
+                    </TabControl.ContentTemplate>
+                </TabControl>
+            </materialDesign:Card>
+        </Grid>
+    </GroupBox>
+</UserControl>

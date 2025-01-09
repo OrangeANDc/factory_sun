@@ -1,0 +1,186 @@
+﻿<Window x:Class="SafetyTestTool.View.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SafetyTestTool.View"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:data ="clr-namespace:SafetyTestTool.Converter"
+        mc:Ignorable="d"
+        Title="SafetyTestTool V1.1.2" Height="800" Width="1200" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <data:HeadBrushConvert x:Key="headBrushConvert"/>
+        <data:ButtonVisableConvert x:Key="ButtonVisableConvert"/>
+        <data:ShowComboBoxConvert x:Key="ShowComboBoxConvert"/>
+        <data:ShowTextBoxConvert x:Key="ShowTextBoxConvert"/>
+        <data:SwitchValueConvert x:Key="SwitchValueConvert"/>
+        <data:TextChangeConvert x:Key="TextChangeConvert"/>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.7*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <GroupBox  Grid.Row="0" Header="{DynamicResource gb1}" Margin="5" Style="{StaticResource NGroupBox}">
+            <StackPanel Orientation="Horizontal">
+
+                <ComboBox x:Name="cbPorts" materialDesign:HintAssist.Hint="{DynamicResource gb1_1}" Margin="20,-8,0,0" Width="90"
+                          FontSize="14"   Style="{StaticResource MaterialDesignFloatingHintComboBox}"/>
+                <Button x:Name="btnRefresh" Content="{DynamicResource gb1_4}" Width="150"  Margin="20,0,0,0"
+                        VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="Button_Click"/>
+                <Button x:Name="btnOpen" Content="{DynamicResource gb1_2}" Width="70"   Margin="20,0,0,0"
+                        VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnOpen_Click"/>
+                <Button x:Name="btnClose" Content="{DynamicResource gb1_3}" Width="70"  Margin="20,0,0,0"
+                        VerticalAlignment="Center"  Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnClose_Click"/>
+                <Button x:Name="btnReadSystemInfo" Content="{DynamicResource gb1_5}" Width="150"  Margin="20,0,0,0"
+                        VerticalAlignment="Center"  Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnReadSystemInfo_Click"/>
+                <Button x:Name="btnReadData" Content="{DynamicResource gb1_6}" Width="110"  Margin="20,0,0,0"
+                        VerticalAlignment="Center" Command="{Binding ReadDataCommand}" Style="{StaticResource MaterialDesignFlatLightBgButton}" Cursor="Hand"/>
+                <Button x:Name="btnReset" Content="{DynamicResource gb1_7}" Width="120"  Margin="20,0,0,0"
+                        VerticalAlignment="Center" Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnReset_Click"/>
+                <Button Content="{DynamicResource gb1_8}" Width="80"  Margin="20,0,0,0"
+                        VerticalAlignment="Center"  Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="btnExport_Click"/>
+
+                <ComboBox x:Name="cbLan" FontSize="14"   materialDesign:HintAssist.Hint="{DynamicResource gb1_9}" SelectionChanged="ComboBox_SelectionChanged"
+                           Margin="40,-8,0,0" Width="90" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                    <ComboBoxItem IsSelected="True">中文</ComboBoxItem>
+                    <ComboBoxItem >English</ComboBoxItem>
+                    
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox  Grid.Row="1" Header="{DynamicResource gb2}" Margin="5,2,5,5" Style="{StaticResource NGroupBox}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.8*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="tbkDeviceName" Text="{DynamicResource gb2_1}" VerticalAlignment="Center" 
+                                   HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbDeviceName" Grid.Column="1" Width="150" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+
+                <TextBlock x:Name="tbkSerialNum" Text="{DynamicResource gb2_2}" VerticalAlignment="Center" Grid.Column="2"
+                               HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbSerialNum" Grid.Column="3" Width="150" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+
+                <TextBlock x:Name="tbkSwVersion" Text="{DynamicResource gb2_3}" VerticalAlignment="Center" Grid.Column="4"
+                               HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbSwVersion" Grid.Column="5" Width="150" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+
+                <TextBlock x:Name="tbkHwVersion" Text="{DynamicResource gb2_4}" VerticalAlignment="Center" Grid.Column="6"
+                               HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbHwVersion" Grid.Column="7" Width="150" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+                
+                 <!--第2行-->
+                <TextBlock x:Name="tbkRatePower" Text="{DynamicResource gb2_5}" VerticalAlignment="Center" Grid.Row="1" 
+                           HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbRatePower" Width="150"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+
+                <TextBlock x:Name="tbkSafety" Text="{DynamicResource gb2_6}" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="2"
+                           HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbSafety" Width="150"  Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+
+                <TextBlock x:Name="tbkGridStandard" Text="{DynamicResource gb2_7}" VerticalAlignment="Center"  Grid.Row="1" Grid.Column="4"
+                           HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbGridStandard" Width="150"  Grid.Row="1" Grid.Column="5" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+
+                <TextBlock x:Name="tbkTime" Text="{DynamicResource gb2_10}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="6"
+                           HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbTime" Width="150" Grid.Row="1" Grid.Column="7" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+
+
+                <!--第3行-->
+                <TextBlock x:Name="tbkVersion" Text="{DynamicResource gb2_8}" VerticalAlignment="Center" Grid.Row="2"
+                           HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbVersion" Width="150" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+
+                <TextBlock x:Name="tbkInternalVersion" Text="{DynamicResource gb2_9}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2"
+                           HorizontalAlignment="Right" FontSize="14" Margin="0,0,-25,0"/>
+                <TextBox x:Name="tbInternalVersion" Width="150" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4">
+                    <TextBlock Text="{DynamicResource gb2_11}" VerticalAlignment="Center" FontSize="14" Margin="20,0,0,0"/>
+                    <ComboBox x:Name="cbControl" Margin="20,-8,0,0" Width="80"  Style="{StaticResource MaterialDesignFloatingHintComboBox}" FontSize="14" >
+                        <ComboBoxItem>STOP</ComboBoxItem>
+                        <ComboBoxItem>START</ComboBoxItem>
+                    </ComboBox>
+                    <Button Content="{DynamicResource b2}" Margin="30,0,0,0" Width="100" FontSize="14" Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="Button_Click_1" Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox  Grid.Row="2" Header="{DynamicResource gb1}" Margin="5,2,5,5" Style="{StaticResource NGroupBox}">
+            <DataGrid x:Name="dgInf" ItemsSource="{Binding ParaInf}"  CanUserDeleteRows="False" CanUserAddRows="False" HeadersVisibility="All"
+                      CanUserSortColumns="False" AutoGenerateColumns="False" LoadingRow="dgInf_LoadingRow" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn HeaderStyle="{StaticResource Style1}"  IsReadOnly="True" Width="500">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <Grid Background ="{Binding Path=DataAddress, Converter={StaticResource ResourceKey=headBrushConvert}}">
+                                    <TextBlock Text="{Binding DataName}" />
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn HeaderStyle="{StaticResource Style2}"   Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <Grid >
+                                    <ComboBox Visibility="{Binding IsSwitch, Converter={StaticResource ShowComboBoxConvert}}" 
+                                              SelectedIndex="{Binding DataValue, Converter={StaticResource SwitchValueConvert}, UpdateSourceTrigger=PropertyChanged}" >
+                                        <ComboBoxItem>OFF</ComboBoxItem>
+                                        <ComboBoxItem>ON</ComboBoxItem>
+                                    </ComboBox>
+                                    <TextBox Visibility="{Binding IsSwitch, Converter={StaticResource ShowTextBoxConvert}}" 
+                                             Text="{Binding DataValue, Converter={StaticResource TextChangeConvert}, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn HeaderStyle="{StaticResource Style3}" Binding="{Binding DataUnit}" Width="90" IsReadOnly="True"/>
+                    <DataGridTextColumn HeaderStyle="{StaticResource Style4}" Binding="{Binding CommandInf}" Width="220" IsReadOnly="True"/>
+                    <DataGridTemplateColumn HeaderStyle="{StaticResource Style5}">
+                        <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                                <Grid Margin="-10">
+                                    <Button Visibility="{Binding Path=DataAddress, Converter={StaticResource ResourceKey=ButtonVisableConvert}}" x:Name="BtnAction" Content="{DynamicResource b1}" Height="20"
+                                    Width="80"  Style="{StaticResource NButton}" Click="BtnRead_Click"
+                                    FontSize="12">
+                                </Button>
+                                </Grid>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn HeaderStyle="{StaticResource Style6}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DockPanel >
+                                    <Button x:Name="BtnAction" Content="{DynamicResource b2}" Height="20"  Style="{StaticResource NButton}"
+                                    Width="80"  Visibility="{Binding Path=DataAddress, Converter={StaticResource ResourceKey=ButtonVisableConvert}}"
+                                    FontSize="12" Click="BtnWrite_Click">
+                                    </Button>
+                                </DockPanel>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </Grid>
+</Window>

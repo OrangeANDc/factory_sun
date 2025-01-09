@@ -1,0 +1,18 @@
+﻿<prism:PrismApplication x:Class="SystemTool.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism ="http://prismlibrary.com/"
+             xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:SystemTool">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="LightBlue" SecondaryColor="Lime"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="NGroupBox" TargetType="{x:Type GroupBox}"/>
+            <Style x:Key="NButton" TargetType="{x:Type Button}"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

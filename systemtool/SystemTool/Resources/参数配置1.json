@@ -1,0 +1,83 @@
+﻿[
+  {
+    "DataName": "防逆流启停",
+    "Remark": "",
+    "DataAddress": 25100,
+    "DataLength": 1,
+    "IsSigned": false,
+    "DataUnit": "",
+    "DataGain": 1
+  },
+  {
+    "DataName": "防逆流上行功率百分比",
+    "Remark": "",
+    "DataAddress": 25103,
+    "DataLength": 1,
+    "IsSigned": false,
+    "DataUnit": "%",
+    "DataGain": 1000
+  },
+  {
+    "DataName": "有功限值百分比",
+"Remark": "",
+    "DataAddress": 25114,
+    "DataLength": 1,
+    "IsSigned": false,
+    "DataUnit": "%",
+    "DataGain": 1
+  },
+  {
+    "DataName": "无功限值百分比",
+"Remark": "",
+    "DataAddress": 25118,
+    "DataLength": 1,
+    "IsSigned": true,
+    "DataUnit": "%",
+    "DataGain": 1
+  },
+  {
+    "DataName": "无功变化斜率/无功响应时间",
+"Remark": "",
+    "DataAddress": 25119,
+    "DataLength": 1,
+    "IsSigned": false,
+    "DataUnit": null,
+    "DataGain": 1
+  },
+  {
+    "DataName": "PF设置",
+"Remark": "",
+    "DataAddress": 25120,
+    "DataLength": 1,
+    "IsSigned": true,
+    "DataUnit": null,
+    "DataGain": 1000
+  },
+  {
+    "DataName": "PF曲线调节",
+"Remark": "",
+    "DataAddress": 25121,
+    "DataLength": 1,
+    "IsSigned": false,
+    "DataUnit": null,
+    "DataGain": 1
+  },
+  {
+    "DataName": "CT变比设置",
+"Remark": "",
+    "DataAddress": 25010,
+    "DataLength": 1,
+    "IsSigned": false,
+    "DataUnit": ":1",
+    "DataGain": 1
+  },
+  {
+    "DataName": "并网自检",
+"Remark": "0-不允许,1-允许",
+    "DataAddress": 25008,
+    "DataLength": 1,
+    "IsSigned": false,
+    "DataUnit": null,
+    "DataGain": 1
+  }
+]

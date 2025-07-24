@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\flashtool\\protocol\\timehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|solutionrelative:flashtool\\protocol\\timehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|d:\\old_factory_projects\\localupdatetool\\toollists\\flashtool\\flashtool\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|solutionrelative:flashtool\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\flashtool\\protocol\\serialdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|solutionrelative:flashtool\\protocol\\serialdevice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\flashtool\\protocol\\modbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|solutionrelative:flashtool\\protocol\\modbus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\flashtool\\protocol\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|solutionrelative:flashtool\\protocol\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\flashtool\\protocol\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|solutionrelative:flashtool\\protocol\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\flashtool\\protocol\\iserial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2CB98E1-2468-4C8B-B4C5-2FBB3261FE3D}|FlashTool\\FlashTool.csproj|solutionrelative:flashtool\\protocol\\iserial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TimeHelper.cs",
+              "DocumentMoniker": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\TimeHelper.cs",
+              "RelativeDocumentMoniker": "FlashTool\\Protocol\\TimeHelper.cs",
+              "ToolTip": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\TimeHelper.cs",
+              "RelativeToolTip": "FlashTool\\Protocol\\TimeHelper.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAIAwwCUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T01:07:04.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "FlashTool\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\MainWindow.xaml.cs",
+              "RelativeToolTip": "FlashTool\\MainWindow.xaml.cs",
+              "ViewState": "AQIAANkBAAAAAAAAAAAAACgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T01:06:26.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SerialDevice.cs",
+              "DocumentMoniker": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\SerialDevice.cs",
+              "RelativeDocumentMoniker": "FlashTool\\Protocol\\SerialDevice.cs",
+              "ToolTip": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\SerialDevice.cs",
+              "RelativeToolTip": "FlashTool\\Protocol\\SerialDevice.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T07:32:15.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Modbus.cs",
+              "DocumentMoniker": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\Modbus.cs",
+              "RelativeDocumentMoniker": "FlashTool\\Protocol\\Modbus.cs",
+              "ToolTip": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\Modbus.cs",
+              "RelativeToolTip": "FlashTool\\Protocol\\Modbus.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T07:31:44.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Message.cs",
+              "DocumentMoniker": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\Message.cs",
+              "RelativeDocumentMoniker": "FlashTool\\Protocol\\Message.cs",
+              "ToolTip": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\Message.cs",
+              "RelativeToolTip": "FlashTool\\Protocol\\Message.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T07:31:42.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Log.cs",
+              "DocumentMoniker": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\Log.cs",
+              "RelativeDocumentMoniker": "FlashTool\\Protocol\\Log.cs",
+              "ToolTip": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\Log.cs",
+              "RelativeToolTip": "FlashTool\\Protocol\\Log.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T07:31:41.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ISerial.cs",
+              "DocumentMoniker": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\ISerial.cs",
+              "RelativeDocumentMoniker": "FlashTool\\Protocol\\ISerial.cs",
+              "ToolTip": "D:\\Old_Factory_Projects\\localupdatetool\\ToolLists\\FlashTool\\FlashTool\\Protocol\\ISerial.cs",
+              "RelativeToolTip": "FlashTool\\Protocol\\ISerial.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T07:31:40.389Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
